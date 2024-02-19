@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Flutter (iPhone 15 Pro Max)",
+            "program": "lib/main.dart",
+            "deviceId": "CFD42F5B-C9CA-4AED-8274-EADCA65BC917",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "Flutter (Pixel 7 API 34)",
+            "program": "lib/main.dart",
+            "deviceId": "emulator-5554",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "Flutter Tests",
+            "program": "test",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}
