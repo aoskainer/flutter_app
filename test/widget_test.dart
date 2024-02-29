@@ -6,8 +6,7 @@ import 'package:flutter_app/main.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // アプリをビルドし、テスト用のウィジェットツリーに追加します。
-    await tester
-        .pumpWidget(const ProviderScope(child: MyApp(title: 'Flutter Demo')));
+    await tester.pumpWidget(const ProviderScope(child: MyApp()));
 
     // カウンターの初期値が0であることを確認します。
     expect(find.text('0'), findsOneWidget);
