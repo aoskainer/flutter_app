@@ -28,6 +28,12 @@ class MyListView extends ConsumerWidget {
           );
         },
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          myListViewModel.addToList('Apple');
+        },
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
