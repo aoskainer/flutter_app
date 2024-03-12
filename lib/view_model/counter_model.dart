@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final mainProvider = ChangeNotifierProvider((ref) => MainModel());
+final counterModelProvider = ChangeNotifierProvider((ref) => CounterModel());
 
-class MainModel extends ChangeNotifier {
+class CounterModel extends ChangeNotifier {
   int counter = 0;
 
   void incrementCounter() {

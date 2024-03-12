@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/provider/main_provider.dart';
+import 'package:flutter_app/view_model/list_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MyListView extends ConsumerWidget {
@@ -8,7 +8,7 @@ class MyListView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final myListViewModel = ref.watch(myListViewModelProvider);
+    final myListViewModel = ref.watch(listModelProvider);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
