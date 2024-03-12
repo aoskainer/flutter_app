@@ -1,18 +1,18 @@
-import 'package:flutter_app/view_model/my_list_view_model.dart';
+import 'package:flutter_app/view_model/list_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('MyListViewModel Tests', () {
+  group('ListModel Tests', () {
     // MyListViewModelの初期状態をテスト
     test('Initial values are set as expected', () {
-      final viewModel = MyListViewModel();
+      final viewModel = ListModel();
 
       expect(viewModel.keyList, ['Amazon', 'Google', 'Facebook']);
     });
 
     // addToList メソッドがリストに項目を追加することをテスト
     test('addToList adds an item to the list', () {
-      final viewModel = MyListViewModel();
+      final viewModel = ListModel();
 
       // リスナーが変更を検知できるかをテストするための変数
       bool isNotified = false;

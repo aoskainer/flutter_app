@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class MyListViewModel extends ChangeNotifier {
+final listModelProvider = ChangeNotifierProvider((ref) => ListModel());
+
+class ListModel extends ChangeNotifier {
   final List<String> _keyList = ['Amazon', 'Google', 'Facebook'];
 
   List<String> get keyList => _keyList;

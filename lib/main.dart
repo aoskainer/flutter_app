@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/main_model.dart';
+import 'package:flutter_app/view_model/counter_model.dart';
 import 'package:flutter_app/view/my_list_view.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -29,7 +29,7 @@ class MyHomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final MainModel mainModel = ref.watch(mainProvider);
+    final CounterModel mainModel = ref.watch(counterModelProvider);
 
     return Scaffold(
       appBar: AppBar(
