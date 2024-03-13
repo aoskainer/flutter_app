@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/provider/counter_view_model_provider.dart';
 import 'package:flutter_app/view_model/counter_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class CounterPage extends ConsumerWidget {
-  const CounterPage({super.key, required this.title});
-  final String title;
+  const CounterPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -13,8 +13,23 @@ class CounterPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(title),
+        title: const Text('Counter'),
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {
+              context.push('/list');
+            },
+            icon: const Icon(Icons.list_alt),
+          ),
+          IconButton(
+            onPressed: () {
+              context.go('/login');
+            },
+            icon: const Icon(Icons.logout),
+          )
+        ],
       ),
       body: Center(
         child: Column(

@@ -10,7 +10,7 @@ void main() {
       await tester.pumpWidget(
         const ProviderScope(
           child: MaterialApp(
-            home: CounterPage(title: 'Counter Test'),
+            home: CounterPage(),
           ),
         ),
       );

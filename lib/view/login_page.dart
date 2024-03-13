@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/provider/login_form_view_model_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends ConsumerWidget {
   const LoginPage({super.key});
@@ -60,7 +61,7 @@ class LoginPage extends ConsumerWidget {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    // ログイン後処理を書く。
+                    context.go('/counter');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
