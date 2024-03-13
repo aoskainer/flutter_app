@@ -10,7 +10,7 @@ void main() {
       await tester.pumpWidget(
         const ProviderScope(
           child: MaterialApp(
-            home: ListPage(title: 'List Test'),
+            home: ListPage(),
           ),
         ),
       );
@@ -26,7 +26,7 @@ void main() {
       await tester.pumpWidget(
         const ProviderScope(
           child: MaterialApp(
-            home: ListPage(title: 'List Test'),
+            home: ListPage(),
           ),
         ),
       );
