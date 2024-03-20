@@ -1,12 +1,19 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_app/state/list_state.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-class ListViewModel extends ChangeNotifier {
-  final List<String> _keyList = ['Amazon', 'Google', 'Facebook'];
+part 'list_view_model.g.dart';
 
-  List<String> get keyList => _keyList;
+@riverpod
+class ListViewModel extends _$ListViewModel {
+  @override
+  ListState build() {
+    return const ListState(
+      items: ['Amazon', 'Google', 'Facebook'],
+    );
+  }
 
+  /// リストに項目を追加する
   void addToList(String value) {
-    _keyList.add(value);
-    notifyListeners();
+    state = state.copyWith(items: [...state.items, value]);
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/provider/counter_view_model_provider.dart';
 import 'package:flutter_app/view_model/counter_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -9,7 +8,7 @@ class CounterPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final CounterViewModel mainModel = ref.watch(counterViewModelProvider);
+    final counterViewModel = ref.watch(counterViewModelProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -39,14 +38,16 @@ class CounterPage extends ConsumerWidget {
               'You have pushed the button this many times:',
             ),
             Text(
-              '${mainModel.counter}',
+              '${counterViewModel.count}',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: mainModel.incrementCounter,
+        onPressed: () {
+          ref.read(counterViewModelProvider.notifier).increment();
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
