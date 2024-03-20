@@ -19,6 +19,13 @@ class CounterPage extends ConsumerWidget {
           IconButton(
             onPressed: () {
               ref.read(counterViewModelProvider.notifier).reset();
+              context.go('/pokemon');
+            },
+            icon: const Icon(Icons.manage_search),
+          ),
+          IconButton(
+            onPressed: () {
+              ref.read(counterViewModelProvider.notifier).reset();
               context.push('/list');
             },
             icon: const Icon(Icons.list_alt),
