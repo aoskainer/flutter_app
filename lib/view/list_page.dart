@@ -40,7 +40,7 @@ class ListPage extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          ref.read(listViewModelProvider.notifier).addToList('Apple');
+          ref.read(listViewModelProvider.notifier).addItem('Apple');
         },
         child: const Icon(Icons.add),
       ),

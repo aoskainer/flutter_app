@@ -5,12 +5,16 @@ part 'login_form_view_model.g.dart';
 
 @riverpod
 class LoginFormViewModel extends _$LoginFormViewModel {
+  final _initialEmail = '';
+  final _initialPassword = '';
+  final _initialIsPasswordObscure = true;
+
   @override
   LoginFormState build() {
-    return const LoginFormState(
-      email: '',
-      password: '',
-      isPasswordObscure: true,
+    return LoginFormState(
+      email: _initialEmail,
+      password: _initialPassword,
+      isPasswordObscure: _initialIsPasswordObscure,
     );
   }
 
@@ -27,5 +31,14 @@ class LoginFormViewModel extends _$LoginFormViewModel {
   /// パスワードを表示するかどうかを切り替える
   void togglePasswordObscure() {
     state = state.copyWith(isPasswordObscure: !state.isPasswordObscure);
+  }
+
+  /// フォームの内容をリセットする
+  void reset() {
+    state = state.copyWith(
+      email: _initialEmail,
+      password: _initialPassword,
+      isPasswordObscure: _initialIsPasswordObscure,
+    );
   }
 }

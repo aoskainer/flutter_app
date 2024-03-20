@@ -44,7 +44,7 @@ void main() {
       );
     });
 
-    test('togglePasswordObscure - 正しく表示・非表示を切り替えられて、リスナーが変更をキャッチしていること', () {
+    test('togglePasswordObscure - 正しく表示・非表示を切り替えられること', () {
       final container = createProviderContainer();
       container
           .read(loginFormViewModelProvider.notifier)
@@ -52,6 +52,37 @@ void main() {
       expect(
         container.read(loginFormViewModelProvider).isPasswordObscure,
         equals(false),
+      );
+    });
+
+    test('reset - 正しくstateが初期状態にリセットされていること', () {
+      final container = createProviderContainer();
+
+      // stateの全ての値を全部更新しておく。
+      container
+          .read(loginFormViewModelProvider.notifier)
+          .updateEmail('test@example.com');
+      container
+          .read(loginFormViewModelProvider.notifier)
+          .updatePassword('A3rYW=+J');
+      container
+          .read(loginFormViewModelProvider.notifier)
+          .togglePasswordObscure();
+
+      // リセットする。stateが初期状態に戻るはず。
+      container.read(loginFormViewModelProvider.notifier).reset();
+
+      expect(
+        container.read(loginFormViewModelProvider).email,
+        equals(''),
+      );
+      expect(
+        container.read(loginFormViewModelProvider).password,
+        equals(''),
+      );
+      expect(
+        container.read(loginFormViewModelProvider).isPasswordObscure,
+        equals(true),
       );
     });
   });

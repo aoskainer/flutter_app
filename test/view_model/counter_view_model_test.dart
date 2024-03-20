@@ -22,12 +22,44 @@ void main() {
       );
     });
 
-    test('decrement - 正しく数値が減算されること', () {
+    test('decrement - カウンターが1以上の時に正しく数値が減算されること', () {
+      final container = createProviderContainer();
+
+      // テスト目的でインクリメントしておく。
+      container.read(counterViewModelProvider.notifier).increment();
+
+      // デクリメントする。
+      container.read(counterViewModelProvider.notifier).decrement();
+
+      expect(
+        container.read(counterViewModelProvider).count,
+        equals(0),
+      );
+    });
+
+    test('decrement - カウンターが0の時に数値が減算されないこと', () {
       final container = createProviderContainer();
       container.read(counterViewModelProvider.notifier).decrement();
       expect(
         container.read(counterViewModelProvider).count,
-        equals(-1),
+        equals(0),
+      );
+    });
+
+    test('reset - 正しく数値がリセットされること', () {
+      final container = createProviderContainer();
+
+      // 何度かインクリメントしておく。
+      container.read(counterViewModelProvider.notifier).increment();
+      container.read(counterViewModelProvider.notifier).increment();
+      container.read(counterViewModelProvider.notifier).increment();
+
+      // リセットする。
+      container.read(counterViewModelProvider.notifier).reset();
+
+      expect(
+        container.read(counterViewModelProvider).count,
+        equals(0),
       );
     });
   });
