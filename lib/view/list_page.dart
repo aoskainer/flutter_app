@@ -18,6 +18,7 @@ class ListPage extends ConsumerWidget {
         actions: <Widget>[
           IconButton(
             onPressed: () {
+              ref.read(listViewModelProvider.notifier).reset();
               context.go('/login');
             },
             icon: const Icon(Icons.logout),

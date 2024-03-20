@@ -28,6 +28,7 @@ class LoginPage extends ConsumerWidget {
                   vertical: 16,
                 ),
                 child: TextFormField(
+                  key: const Key('data-testid-LoginPage-email'),
                   decoration: const InputDecoration(
                     labelText: 'Username',
                   ),
@@ -44,6 +45,7 @@ class LoginPage extends ConsumerWidget {
                   vertical: 16,
                 ),
                 child: TextFormField(
+                  key: const Key('data-testid-LoginPage-password'),
                   obscureText: loginFormViewModel.isPasswordObscure,
                   decoration: InputDecoration(
                     labelText: 'Password',
@@ -73,6 +75,7 @@ class LoginPage extends ConsumerWidget {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
+                    ref.read(loginFormViewModelProvider.notifier).reset();
                     context.go('/counter');
                   },
                   style: ElevatedButton.styleFrom(

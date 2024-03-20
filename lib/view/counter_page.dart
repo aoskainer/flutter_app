@@ -18,12 +18,14 @@ class CounterPage extends ConsumerWidget {
         actions: <Widget>[
           IconButton(
             onPressed: () {
+              ref.read(counterViewModelProvider.notifier).reset();
               context.push('/list');
             },
             icon: const Icon(Icons.list_alt),
           ),
           IconButton(
             onPressed: () {
+              ref.read(counterViewModelProvider.notifier).reset();
               context.go('/login');
             },
             icon: const Icon(Icons.logout),
