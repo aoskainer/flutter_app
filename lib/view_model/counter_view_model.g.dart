@@ -6,7 +6,7 @@ part of 'counter_view_model.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$counterViewModelHash() => r'fa4c8606f9bfafa691a16a4c3b76281c49af0974';
+String _$counterViewModelHash() => r'f3d8f3ed4fe4d460e56cf254202dac8ce6354e98';
 
 /// See also [CounterViewModel].
 @ProviderFor(CounterViewModel)

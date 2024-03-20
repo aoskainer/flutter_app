@@ -7,7 +7,7 @@ part of 'login_form_view_model.dart';
 // **************************************************************************
 
 String _$loginFormViewModelHash() =>
-    r'f31f2de7a92f021800906bdb9e58fc75f1d67c8c';
+    r'd3721dddbc629de6827e56e4968a539daec84c85';
 
 /// See also [LoginFormViewModel].
 @ProviderFor(LoginFormViewModel)

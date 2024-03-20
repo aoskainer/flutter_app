@@ -5,10 +5,12 @@ part 'counter_view_model.g.dart';
 
 @riverpod
 class CounterViewModel extends _$CounterViewModel {
+  final _initialCount = 0;
+
   @override
   CounterState build() {
-    return const CounterState(
-      count: 0,
+    return CounterState(
+      count: _initialCount,
     );
   }
 
@@ -19,6 +21,13 @@ class CounterViewModel extends _$CounterViewModel {
 
   /// カウントを減らす
   void decrement() {
-    state = state.copyWith(count: state.count - 1);
+    if (state.count > 0) {
+      state = state.copyWith(count: state.count - 1);
+    }
+  }
+
+  /// カウントをリセットする
+  void reset() {
+    state = state.copyWith(count: _initialCount);
   }
 }
