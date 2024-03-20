@@ -1,10 +1,24 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_app/state/counter_state.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-class CounterViewModel extends ChangeNotifier {
-  int counter = 0;
+part 'counter_view_model.g.dart';
 
-  void incrementCounter() {
-    counter++;
-    notifyListeners();
+@riverpod
+class CounterViewModel extends _$CounterViewModel {
+  @override
+  CounterState build() {
+    return const CounterState(
+      count: 0,
+    );
+  }
+
+  /// カウントを増やす
+  void increment() {
+    state = state.copyWith(count: state.count + 1);
+  }
+
+  /// カウントを減らす
+  void decrement() {
+    state = state.copyWith(count: state.count - 1);
   }
 }

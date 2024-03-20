@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/provider/list_view_model_provider.dart';
+import 'package:flutter_app/view_model/list_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -9,6 +9,7 @@ class ListPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final listViewModel = ref.watch(listViewModelProvider);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('List'),
@@ -24,13 +25,13 @@ class ListPage extends ConsumerWidget {
         ],
       ),
       body: ListView.builder(
-        itemCount: listViewModel.keyList.length,
+        itemCount: listViewModel.items.length,
         itemBuilder: (context, index) {
           return Column(
             children: [
               ListTile(
                 leading: const Icon(Icons.key),
-                title: Text(listViewModel.keyList[index]),
+                title: Text(listViewModel.items[index]),
               ),
               const Divider(height: 0),
             ],
@@ -39,7 +40,7 @@ class ListPage extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          listViewModel.addToList('Apple');
+          ref.read(listViewModelProvider.notifier).addToList('Apple');
         },
         child: const Icon(Icons.add),
       ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/provider/login_form_view_model_provider.dart';
+import 'package:flutter_app/view_model/login_form_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -31,6 +31,11 @@ class LoginPage extends ConsumerWidget {
                   decoration: const InputDecoration(
                     labelText: 'Username',
                   ),
+                  onChanged: (value) {
+                    ref
+                        .read(loginFormViewModelProvider.notifier)
+                        .updateEmail(value);
+                  },
                 ),
               ),
               Padding(
@@ -39,18 +44,25 @@ class LoginPage extends ConsumerWidget {
                   vertical: 16,
                 ),
                 child: TextFormField(
-                  obscureText: loginFormViewModel.isObscure,
+                  obscureText: loginFormViewModel.isPasswordObscure,
                   decoration: InputDecoration(
                     labelText: 'Password',
                     suffixIcon: IconButton(
-                      icon: Icon(loginFormViewModel.isObscure
+                      icon: Icon(loginFormViewModel.isPasswordObscure
                           ? Icons.visibility_off
                           : Icons.visibility),
                       onPressed: () {
-                        loginFormViewModel.toggleObscure();
+                        ref
+                            .read(loginFormViewModelProvider.notifier)
+                            .togglePasswordObscure();
                       },
                     ),
                   ),
+                  onChanged: (value) {
+                    ref
+                        .read(loginFormViewModelProvider.notifier)
+                        .updatePassword(value);
+                  },
                 ),
               ),
               const Padding(
