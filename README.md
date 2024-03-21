@@ -1,6 +1,7 @@
 # flutter_app
 
-A new Flutter project.
+[![Run Tests](https://github.com/aoskainer/flutter_app/actions/workflows/test.yml/badge.svg)](https://github.com/aoskainer/flutter_app/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/aoskainer/flutter_app/graph/badge.svg?token=Ta1vRvM2qe)](https://codecov.io/gh/aoskainer/flutter_app)
 
 ## Getting Started
 
