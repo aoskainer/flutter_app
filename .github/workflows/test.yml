@@ -37,9 +37,15 @@ jobs:
         run: flutter pub get
 
       - name: Run Tests
-        run: flutter test --machine | tojunit --output TEST-results.xml
+        run: flutter test --machine --coverage | tojunit --output TEST-results.xml
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
           files: TEST-results.xml
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: aoskainer/flutter_app
