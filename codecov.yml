@@ -1,0 +1,10 @@
+coverage:
+  status:
+    project:
+      default:
+        target: 100%
+        threshold: 70%
+
+ignore:
+  - "**/*.freezed.dart"
+  - "**/*.g.dart"
