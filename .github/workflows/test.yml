@@ -38,7 +38,7 @@ jobs:
         run: flutter test -r json --coverage | tojunit --output TEST-results.xml
 
       - name: Cache Workspace with Results
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ github.workspace }}
           key: workspace-with-results-${{ github.sha }}
@@ -48,7 +48,7 @@ jobs:
     needs: test
     steps:
       - name: Get Workspace Cache from Test Job
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ github.workspace }}
           key: workspace-with-results-${{ github.sha }}
