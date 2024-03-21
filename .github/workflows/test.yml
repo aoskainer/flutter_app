@@ -18,7 +18,6 @@ jobs:
   test:
     name: Run Tests
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -39,6 +38,23 @@ jobs:
       - name: Run Tests
         run: flutter test -r json --coverage | tojunit --output TEST-results.xml
 
+      - name: Cache Workspace with Results
+        uses: actions/cache@v3
+        with:
+          path: ${{ github.workspace }}
+          key: workspace-with-results-${{ github.sha }}
+
+  notification:
+    name: Send Notification
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Get Workspace Cache from Test Job
+        uses: actions/cache@v3
+        with:
+          path: ${{ github.workspace }}
+          key: workspace-with-results-${{ github.sha }}
+
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
@@ -48,4 +64,3 @@ jobs:
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: aoskainer/flutter_app
