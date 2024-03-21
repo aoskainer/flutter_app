@@ -37,7 +37,7 @@ jobs:
         run: flutter pub get
 
       - name: Run Tests
-        run: flutter test --machine --coverage | tojunit --output TEST-results.xml
+        run: flutter test -r json --coverage | tojunit --output TEST-results.xml
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
