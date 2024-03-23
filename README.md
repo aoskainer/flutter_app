@@ -20,7 +20,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ```bash
 # 開発時はこっちで。
-$ dart run builder_runner watch
+$ dart run build_runner watch
 # 一応こっちもあるけどそこまで出番はなさそう。
-$ dart run builder_runner build
+$ dart run build_runner build
 ```
