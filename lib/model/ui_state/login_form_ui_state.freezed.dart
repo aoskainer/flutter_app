@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'login_form_state.dart';
+part of 'login_form_ui_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$LoginFormState {
+mixin _$LoginFormUiState {
   /// メールアドレス
   String get email => throw _privateConstructorUsedError;
 
@@ -26,23 +26,23 @@ mixin _$LoginFormState {
   bool get isPasswordObscure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $LoginFormStateCopyWith<LoginFormState> get copyWith =>
+  $LoginFormUiStateCopyWith<LoginFormUiState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoginFormStateCopyWith<$Res> {
-  factory $LoginFormStateCopyWith(
-          LoginFormState value, $Res Function(LoginFormState) then) =
-      _$LoginFormStateCopyWithImpl<$Res, LoginFormState>;
+abstract class $LoginFormUiStateCopyWith<$Res> {
+  factory $LoginFormUiStateCopyWith(
+          LoginFormUiState value, $Res Function(LoginFormUiState) then) =
+      _$LoginFormUiStateCopyWithImpl<$Res, LoginFormUiState>;
   @useResult
   $Res call({String email, String password, bool isPasswordObscure});
 }
 
 /// @nodoc
-class _$LoginFormStateCopyWithImpl<$Res, $Val extends LoginFormState>
-    implements $LoginFormStateCopyWith<$Res> {
-  _$LoginFormStateCopyWithImpl(this._value, this._then);
+class _$LoginFormUiStateCopyWithImpl<$Res, $Val extends LoginFormUiState>
+    implements $LoginFormUiStateCopyWith<$Res> {
+  _$LoginFormUiStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -74,22 +74,22 @@ class _$LoginFormStateCopyWithImpl<$Res, $Val extends LoginFormState>
 }
 
 /// @nodoc
-abstract class _$$LoginFormStateImplCopyWith<$Res>
-    implements $LoginFormStateCopyWith<$Res> {
-  factory _$$LoginFormStateImplCopyWith(_$LoginFormStateImpl value,
-          $Res Function(_$LoginFormStateImpl) then) =
-      __$$LoginFormStateImplCopyWithImpl<$Res>;
+abstract class _$$LoginFormUiStateImplCopyWith<$Res>
+    implements $LoginFormUiStateCopyWith<$Res> {
+  factory _$$LoginFormUiStateImplCopyWith(_$LoginFormUiStateImpl value,
+          $Res Function(_$LoginFormUiStateImpl) then) =
+      __$$LoginFormUiStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String email, String password, bool isPasswordObscure});
 }
 
 /// @nodoc
-class __$$LoginFormStateImplCopyWithImpl<$Res>
-    extends _$LoginFormStateCopyWithImpl<$Res, _$LoginFormStateImpl>
-    implements _$$LoginFormStateImplCopyWith<$Res> {
-  __$$LoginFormStateImplCopyWithImpl(
-      _$LoginFormStateImpl _value, $Res Function(_$LoginFormStateImpl) _then)
+class __$$LoginFormUiStateImplCopyWithImpl<$Res>
+    extends _$LoginFormUiStateCopyWithImpl<$Res, _$LoginFormUiStateImpl>
+    implements _$$LoginFormUiStateImplCopyWith<$Res> {
+  __$$LoginFormUiStateImplCopyWithImpl(_$LoginFormUiStateImpl _value,
+      $Res Function(_$LoginFormUiStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +99,7 @@ class __$$LoginFormStateImplCopyWithImpl<$Res>
     Object? password = null,
     Object? isPasswordObscure = null,
   }) {
-    return _then(_$LoginFormStateImpl(
+    return _then(_$LoginFormUiStateImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -118,8 +118,8 @@ class __$$LoginFormStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoginFormStateImpl implements _LoginFormState {
-  const _$LoginFormStateImpl(
+class _$LoginFormUiStateImpl implements _LoginFormUiState {
+  const _$LoginFormUiStateImpl(
       {required this.email,
       required this.password,
       required this.isPasswordObscure});
@@ -138,14 +138,14 @@ class _$LoginFormStateImpl implements _LoginFormState {
 
   @override
   String toString() {
-    return 'LoginFormState(email: $email, password: $password, isPasswordObscure: $isPasswordObscure)';
+    return 'LoginFormUiState(email: $email, password: $password, isPasswordObscure: $isPasswordObscure)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoginFormStateImpl &&
+            other is _$LoginFormUiStateImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password) &&
@@ -160,16 +160,16 @@ class _$LoginFormStateImpl implements _LoginFormState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoginFormStateImplCopyWith<_$LoginFormStateImpl> get copyWith =>
-      __$$LoginFormStateImplCopyWithImpl<_$LoginFormStateImpl>(
+  _$$LoginFormUiStateImplCopyWith<_$LoginFormUiStateImpl> get copyWith =>
+      __$$LoginFormUiStateImplCopyWithImpl<_$LoginFormUiStateImpl>(
           this, _$identity);
 }
 
-abstract class _LoginFormState implements LoginFormState {
-  const factory _LoginFormState(
+abstract class _LoginFormUiState implements LoginFormUiState {
+  const factory _LoginFormUiState(
       {required final String email,
       required final String password,
-      required final bool isPasswordObscure}) = _$LoginFormStateImpl;
+      required final bool isPasswordObscure}) = _$LoginFormUiStateImpl;
 
   @override
 
@@ -185,6 +185,6 @@ abstract class _LoginFormState implements LoginFormState {
   bool get isPasswordObscure;
   @override
   @JsonKey(ignore: true)
-  _$$LoginFormStateImplCopyWith<_$LoginFormStateImpl> get copyWith =>
+  _$$LoginFormUiStateImplCopyWith<_$LoginFormUiStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
