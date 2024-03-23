@@ -1,10 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'login_form_state.freezed.dart';
+part 'login_form_ui_state.freezed.dart';
 
 @freezed
-class LoginFormState with _$LoginFormState {
-  const factory LoginFormState({
+class LoginFormUiState with _$LoginFormUiState {
+  const factory LoginFormUiState({
     /// メールアドレス
     required String email,
 
@@ -13,5 +13,5 @@ class LoginFormState with _$LoginFormState {
 
     /// パスワードの表示・非表示
     required bool isPasswordObscure,
-  }) = _LoginFormState;
+  }) = _LoginFormUiState;
 }

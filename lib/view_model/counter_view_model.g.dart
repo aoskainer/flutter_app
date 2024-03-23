@@ -6,12 +6,12 @@ part of 'counter_view_model.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$counterViewModelHash() => r'f3d8f3ed4fe4d460e56cf254202dac8ce6354e98';
+String _$counterViewModelHash() => r'e039873c9052de6387c9d3724cf5a19b20371ae7';
 
 /// See also [CounterViewModel].
 @ProviderFor(CounterViewModel)
 final counterViewModelProvider =
-    AutoDisposeNotifierProvider<CounterViewModel, CounterState>.internal(
+    AutoDisposeNotifierProvider<CounterViewModel, CounterUiState>.internal(
   CounterViewModel.new,
   name: r'counterViewModelProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -21,6 +21,6 @@ final counterViewModelProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$CounterViewModel = AutoDisposeNotifier<CounterState>;
+typedef _$CounterViewModel = AutoDisposeNotifier<CounterUiState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

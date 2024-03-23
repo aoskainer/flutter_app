@@ -1,4 +1,4 @@
-import 'package:flutter_app/state/login_form_state.dart';
+import 'package:flutter_app/model/ui_state/login_form_ui_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'login_form_view_model.g.dart';
@@ -10,8 +10,8 @@ class LoginFormViewModel extends _$LoginFormViewModel {
   final _initialIsPasswordObscure = true;
 
   @override
-  LoginFormState build() {
-    return LoginFormState(
+  LoginFormUiState build() {
+    return LoginFormUiState(
       email: _initialEmail,
       password: _initialPassword,
       isPasswordObscure: _initialIsPasswordObscure,

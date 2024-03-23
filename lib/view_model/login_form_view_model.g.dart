@@ -7,12 +7,12 @@ part of 'login_form_view_model.dart';
 // **************************************************************************
 
 String _$loginFormViewModelHash() =>
-    r'd3721dddbc629de6827e56e4968a539daec84c85';
+    r'106f915b458977ede8bc1799c544fd830e34a226';
 
 /// See also [LoginFormViewModel].
 @ProviderFor(LoginFormViewModel)
 final loginFormViewModelProvider =
-    AutoDisposeNotifierProvider<LoginFormViewModel, LoginFormState>.internal(
+    AutoDisposeNotifierProvider<LoginFormViewModel, LoginFormUiState>.internal(
   LoginFormViewModel.new,
   name: r'loginFormViewModelProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -22,6 +22,6 @@ final loginFormViewModelProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$LoginFormViewModel = AutoDisposeNotifier<LoginFormState>;
+typedef _$LoginFormViewModel = AutoDisposeNotifier<LoginFormUiState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

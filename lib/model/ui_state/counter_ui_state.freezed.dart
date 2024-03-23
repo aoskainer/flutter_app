@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'counter_state.dart';
+part of 'counter_ui_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,28 +15,28 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$CounterState {
+mixin _$CounterUiState {
   /// カウント
   int get count => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CounterStateCopyWith<CounterState> get copyWith =>
+  $CounterUiStateCopyWith<CounterUiState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CounterStateCopyWith<$Res> {
-  factory $CounterStateCopyWith(
-          CounterState value, $Res Function(CounterState) then) =
-      _$CounterStateCopyWithImpl<$Res, CounterState>;
+abstract class $CounterUiStateCopyWith<$Res> {
+  factory $CounterUiStateCopyWith(
+          CounterUiState value, $Res Function(CounterUiState) then) =
+      _$CounterUiStateCopyWithImpl<$Res, CounterUiState>;
   @useResult
   $Res call({int count});
 }
 
 /// @nodoc
-class _$CounterStateCopyWithImpl<$Res, $Val extends CounterState>
-    implements $CounterStateCopyWith<$Res> {
-  _$CounterStateCopyWithImpl(this._value, this._then);
+class _$CounterUiStateCopyWithImpl<$Res, $Val extends CounterUiState>
+    implements $CounterUiStateCopyWith<$Res> {
+  _$CounterUiStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -58,22 +58,22 @@ class _$CounterStateCopyWithImpl<$Res, $Val extends CounterState>
 }
 
 /// @nodoc
-abstract class _$$CounterImplCopyWith<$Res>
-    implements $CounterStateCopyWith<$Res> {
-  factory _$$CounterImplCopyWith(
-          _$CounterImpl value, $Res Function(_$CounterImpl) then) =
-      __$$CounterImplCopyWithImpl<$Res>;
+abstract class _$$CounterUiStateImplCopyWith<$Res>
+    implements $CounterUiStateCopyWith<$Res> {
+  factory _$$CounterUiStateImplCopyWith(_$CounterUiStateImpl value,
+          $Res Function(_$CounterUiStateImpl) then) =
+      __$$CounterUiStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int count});
 }
 
 /// @nodoc
-class __$$CounterImplCopyWithImpl<$Res>
-    extends _$CounterStateCopyWithImpl<$Res, _$CounterImpl>
-    implements _$$CounterImplCopyWith<$Res> {
-  __$$CounterImplCopyWithImpl(
-      _$CounterImpl _value, $Res Function(_$CounterImpl) _then)
+class __$$CounterUiStateImplCopyWithImpl<$Res>
+    extends _$CounterUiStateCopyWithImpl<$Res, _$CounterUiStateImpl>
+    implements _$$CounterUiStateImplCopyWith<$Res> {
+  __$$CounterUiStateImplCopyWithImpl(
+      _$CounterUiStateImpl _value, $Res Function(_$CounterUiStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -81,7 +81,7 @@ class __$$CounterImplCopyWithImpl<$Res>
   $Res call({
     Object? count = null,
   }) {
-    return _then(_$CounterImpl(
+    return _then(_$CounterUiStateImpl(
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
@@ -92,8 +92,8 @@ class __$$CounterImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CounterImpl implements _Counter {
-  const _$CounterImpl({required this.count});
+class _$CounterUiStateImpl implements _CounterUiState {
+  const _$CounterUiStateImpl({required this.count});
 
   /// カウント
   @override
@@ -101,14 +101,14 @@ class _$CounterImpl implements _Counter {
 
   @override
   String toString() {
-    return 'CounterState(count: $count)';
+    return 'CounterUiState(count: $count)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CounterImpl &&
+            other is _$CounterUiStateImpl &&
             (identical(other.count, count) || other.count == count));
   }
 
@@ -118,12 +118,14 @@ class _$CounterImpl implements _Counter {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CounterImplCopyWith<_$CounterImpl> get copyWith =>
-      __$$CounterImplCopyWithImpl<_$CounterImpl>(this, _$identity);
+  _$$CounterUiStateImplCopyWith<_$CounterUiStateImpl> get copyWith =>
+      __$$CounterUiStateImplCopyWithImpl<_$CounterUiStateImpl>(
+          this, _$identity);
 }
 
-abstract class _Counter implements CounterState {
-  const factory _Counter({required final int count}) = _$CounterImpl;
+abstract class _CounterUiState implements CounterUiState {
+  const factory _CounterUiState({required final int count}) =
+      _$CounterUiStateImpl;
 
   @override
 
@@ -131,6 +133,6 @@ abstract class _Counter implements CounterState {
   int get count;
   @override
   @JsonKey(ignore: true)
-  _$$CounterImplCopyWith<_$CounterImpl> get copyWith =>
+  _$$CounterUiStateImplCopyWith<_$CounterUiStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
