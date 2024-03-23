@@ -76,7 +76,7 @@ class LoginPage extends ConsumerWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     ref.read(loginFormViewModelProvider.notifier).reset();
-                    context.go('/counter');
+                    context.go('/top');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,

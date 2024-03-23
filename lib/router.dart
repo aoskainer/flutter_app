@@ -3,6 +3,7 @@ import 'package:flutter_app/view/counter_page.dart';
 import 'package:flutter_app/view/list_page.dart';
 import 'package:flutter_app/view/login_page.dart';
 import 'package:flutter_app/view/pokemon_page.dart';
+import 'package:flutter_app/view/top_page.dart';
 import 'package:go_router/go_router.dart';
 
 final goRouter = RouterFactory().router;
@@ -25,6 +26,16 @@ class RouterFactory {
             return MaterialPage(
               key: state.pageKey,
               child: const LoginPage(),
+            );
+          },
+        ),
+        GoRoute(
+          path: '/top',
+          name: 'top',
+          pageBuilder: (context, state) {
+            return MaterialPage(
+              key: state.pageKey,
+              child: const TopPage(),
             );
           },
         ),
