@@ -23,6 +23,11 @@ class TopPage extends ConsumerWidget {
         buttonText: 'ポケモン',
         route: '/pokemon',
       ),
+      TopPageIconRoute(
+        icon: Icons.map_outlined,
+        buttonText: 'Google Map',
+        route: '/googleMap',
+      ),
     ];
 
     return Scaffold(
