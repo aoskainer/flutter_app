@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/view/counter_page.dart';
+import 'package:flutter_app/view/google_map_page.dart';
 import 'package:flutter_app/view/list_page.dart';
 import 'package:flutter_app/view/login_page.dart';
 import 'package:flutter_app/view/pokemon_page.dart';
@@ -66,6 +67,16 @@ class RouterFactory {
             return MaterialPage(
               key: state.pageKey,
               child: const PokemonPage(),
+            );
+          },
+        ),
+        GoRoute(
+          path: '/googleMap',
+          name: 'googleMap',
+          pageBuilder: (context, state) {
+            return MaterialPage(
+              key: state.pageKey,
+              child: const GoogleMapPage(),
             );
           },
         ),
