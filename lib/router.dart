@@ -7,6 +7,7 @@ import 'package:flutter_app/view/list_page.dart';
 import 'package:flutter_app/view/login_page.dart';
 import 'package:flutter_app/view/pokemon_page.dart';
 import 'package:flutter_app/view/top_page.dart';
+import 'package:flutter_app/view/web_page.dart';
 import 'package:go_router/go_router.dart';
 
 final goRouter = RouterFactory().router;
@@ -99,6 +100,16 @@ class RouterFactory {
             return MaterialPage(
               key: state.pageKey,
               child: const GoogleAdmobRewardedPage(),
+            );
+          },
+        ),
+        GoRoute(
+          path: '/web',
+          name: 'web',
+          pageBuilder: (context, state) {
+            return MaterialPage(
+              key: state.pageKey,
+              child: const WebPage(),
             );
           },
         ),
