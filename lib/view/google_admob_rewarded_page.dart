@@ -14,15 +14,12 @@ class GoogleAdmobRewardedPage extends StatefulWidget {
 
 class _GoogleAdmobRewardedState extends State<GoogleAdmobRewardedPage> {
   RewardedAd? _rewardedAd;
-  final String _adUnitId = Platform.isAndroid
-      ? AdUnitTestId.rewarded.android
-      : AdUnitTestId.rewarded.ios;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Admob Rewarded'),
+        title: const Text('リワード広告'),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
         actions: <Widget>[
@@ -65,7 +62,9 @@ class _GoogleAdmobRewardedState extends State<GoogleAdmobRewardedPage> {
 
   void _loadAd() {
     RewardedAd.load(
-      adUnitId: _adUnitId,
+      adUnitId: Platform.isAndroid
+          ? AdUnitTestId.rewarded.android
+          : AdUnitTestId.rewarded.ios,
       request: const AdRequest(),
       rewardedAdLoadCallback: RewardedAdLoadCallback(
         onAdLoaded: (ad) {

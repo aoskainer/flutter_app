@@ -12,7 +12,7 @@ class LoginPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login Form'),
+        title: const Text('ログイン'),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
       ),

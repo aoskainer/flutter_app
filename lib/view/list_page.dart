@@ -12,7 +12,7 @@ class ListPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('List'),
+        title: const Text('リスト'),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
         actions: <Widget>[

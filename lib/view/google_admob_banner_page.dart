@@ -6,15 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class GoogleAdmobBannerPage extends StatefulWidget {
-  final AdSize adSize;
-  final String adUnitId = Platform.isAndroid
-      ? AdUnitTestId.fixedSizeBanner.android
-      : AdUnitTestId.fixedSizeBanner.ios;
-
-  GoogleAdmobBannerPage({
-    super.key,
-    this.adSize = AdSize.banner,
-  });
+  const GoogleAdmobBannerPage({super.key});
 
   @override
   State<GoogleAdmobBannerPage> createState() => _GoogleAdmobBannerState();
@@ -22,12 +14,13 @@ class GoogleAdmobBannerPage extends StatefulWidget {
 
 class _GoogleAdmobBannerState extends State<GoogleAdmobBannerPage> {
   BannerAd? _bannerAd;
+  final AdSize _adSize = AdSize.banner;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Flutter App'),
+        title: const Text('バナー広告'),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
         actions: <Widget>[
@@ -44,8 +37,8 @@ class _GoogleAdmobBannerState extends State<GoogleAdmobBannerPage> {
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: SizedBox(
-                    width: widget.adSize.width.toDouble(),
-                    height: widget.adSize.height.toDouble(),
+                    width: _adSize.width.toDouble(),
+                    height: _adSize.height.toDouble(),
                     child: AdWidget(ad: _bannerAd!),
                   ),
                 ),
@@ -69,8 +62,10 @@ class _GoogleAdmobBannerState extends State<GoogleAdmobBannerPage> {
 
   void _loadAd() {
     final bannerAd = BannerAd(
-      size: widget.adSize,
-      adUnitId: widget.adUnitId,
+      size: _adSize,
+      adUnitId: Platform.isAndroid
+          ? AdUnitTestId.fixedSizeBanner.android
+          : AdUnitTestId.fixedSizeBanner.ios,
       request: const AdRequest(),
       listener: BannerAdListener(
         onAdLoaded: (ad) {

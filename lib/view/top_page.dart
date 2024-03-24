@@ -25,7 +25,7 @@ class TopPage extends ConsumerWidget {
       ),
       TopPageIconRoute(
         icon: Icons.map_outlined,
-        buttonText: 'Google Map',
+        buttonText: 'マップ',
         route: '/googleMap',
       ),
       TopPageIconRoute(

@@ -12,7 +12,7 @@ class PokemonPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pokemon List'),
+        title: const Text('ポケモン'),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
         actions: <Widget>[

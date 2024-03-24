@@ -13,7 +13,7 @@ class GoogleMapPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Google Map Page'),
+        title: const Text('マップ'),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
         actions: <Widget>[
