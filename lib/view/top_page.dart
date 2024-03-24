@@ -38,6 +38,11 @@ class TopPage extends ConsumerWidget {
         buttonText: 'リワード広告',
         route: '/googleAdmobRewarded',
       ),
+      TopPageIconRoute(
+        icon: Icons.web,
+        buttonText: 'Webページ遷移',
+        route: '/web',
+      ),
     ];
 
     return Scaffold(
