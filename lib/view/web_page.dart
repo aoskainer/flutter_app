@@ -24,13 +24,7 @@ class WebPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 8),
             child: InkWell(
-              onTap: () async {
-                if (!await launchUrlWithPlatformDefault(
-                    'https://flutter.dev')) {
-                  throw Exception(
-                      'Could not launch https://flutter.dev with platform default');
-                }
-              },
+              onTap: () => launchUrlWithPlatformDefault('https://flutter.dev'),
               child: Card(
                 child: Container(
                   padding: const EdgeInsets.all(24),
@@ -49,13 +43,8 @@ class WebPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 4),
             child: InkWell(
-              onTap: () async {
-                if (!await launchUrlWithExternalApplication(
-                    'https://flutter.dev')) {
-                  throw Exception(
-                      'Could not launch https://flutter.dev with external application');
-                }
-              },
+              onTap: () =>
+                  launchUrlWithExternalApplication('https://flutter.dev'),
               child: Card(
                 child: Container(
                   padding: const EdgeInsets.all(24),
@@ -97,13 +86,17 @@ class WebPage extends StatelessWidget {
     );
   }
 
-  Future<bool> launchUrlWithPlatformDefault(String uri) async {
+  Future<void> launchUrlWithPlatformDefault(String uri) async {
     final url = Uri.parse(uri);
-    return await launchUrl(url);
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url with platform default');
+    }
   }
 
-  Future<bool> launchUrlWithExternalApplication(String uri) async {
+  Future<void> launchUrlWithExternalApplication(String uri) async {
     final url = Uri.parse(uri);
-    return await launchUrl(url, mode: LaunchMode.externalApplication);
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+      throw Exception('Could not launch $url with external application');
+    }
   }
 }
