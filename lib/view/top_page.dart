@@ -28,6 +28,11 @@ class TopPage extends ConsumerWidget {
         buttonText: 'Google Map',
         route: '/googleMap',
       ),
+      TopPageIconRoute(
+        icon: Icons.ad_units_outlined,
+        buttonText: 'バナー広告',
+        route: '/googleAdmobBanner',
+      ),
     ];
 
     return Scaffold(
@@ -50,6 +55,7 @@ class TopPage extends ConsumerWidget {
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
           crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
           childAspectRatio: 1.0,
         ),
         itemCount: items.length,
