@@ -19,7 +19,7 @@ class TopPage extends ConsumerWidget {
         route: '/list',
       ),
       TopPageIconRoute(
-        icon: Icons.manage_search,
+        icon: Icons.catching_pokemon,
         buttonText: 'ポケモン',
         route: '/pokemon',
       ),
