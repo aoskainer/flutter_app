@@ -19,7 +19,7 @@ class _GoogleAdmobRewardedState extends State<GoogleAdmobRewardedPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Admob Rewarded'),
+        title: const Text('リワード広告'),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
         actions: <Widget>[

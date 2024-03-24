@@ -12,7 +12,7 @@ class CounterPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Counter'),
+        title: const Text('カウンター'),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
         actions: <Widget>[

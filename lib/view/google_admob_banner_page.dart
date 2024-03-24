@@ -20,7 +20,7 @@ class _GoogleAdmobBannerState extends State<GoogleAdmobBannerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Flutter App'),
+        title: const Text('バナー広告'),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
         actions: <Widget>[
