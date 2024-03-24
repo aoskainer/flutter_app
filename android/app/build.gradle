@@ -45,9 +45,9 @@ android {
         applicationId "com.example.flutter_app"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        // google_maps_flutterの最小SDKバージョンが20以上なので変更してます。
+        // google_mobile_adsの最小SDKバージョンが21以上なので変更してます。
         // minSdkVersion flutter.minSdkVersion
-        minSdkVersion 20
+        minSdkVersion 21
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -66,4 +66,6 @@ flutter {
     source '../..'
 }
 
-dependencies {}
+dependencies {
+    implementation 'com.google.android.gms:play-services-ads:23.0.0'
+}
