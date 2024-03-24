@@ -33,6 +33,11 @@ class TopPage extends ConsumerWidget {
         buttonText: 'バナー広告',
         route: '/googleAdmobBanner',
       ),
+      TopPageIconRoute(
+        icon: Icons.currency_yen_rounded,
+        buttonText: 'リワード広告',
+        route: '/googleAdmobRewarded',
+      ),
     ];
 
     return Scaffold(
