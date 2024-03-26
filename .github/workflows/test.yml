@@ -65,3 +65,9 @@ jobs:
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Clear Temporary Cache
+        run: |
+          gh cache list --key workspace-with-results --json key --jq '.[].key' | xargs -n 1 gh cache delete
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
