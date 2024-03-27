@@ -18,9 +18,27 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Memo
 
+### build_runnerの使い方
+
 ```bash
 # 開発時はこっちで。
 $ dart run build_runner watch
 # 一応こっちもあるけどそこまで出番はなさそう。
 $ dart run build_runner build
 ```
+
+### パッケージ名の変更方法
+
+Androidの場合
+```bash
+$ flutter pub add -d change_app_package_name
+$ flutter pub run change_app_package_name:main com.example.new_package_name
+```
+
+iOSの場合
+```bash
+$ xed ~/path/to/flutter_app/ios
+```
+でXcodeを開く。<br>
+次に左側のバーの`Runner`をクリックしてRunner設定を開く。<br>
+`TARGET > Runner`, `TARGET > RunnerTests`をそれぞれ開いて`Bundle Identifier`を変更する。
