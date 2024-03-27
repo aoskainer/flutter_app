@@ -45,9 +45,5 @@ app.*.map.json
 # FVM Version Cache
 .fvm/
 
-# Firebase
-**/android/app/google-services.json
-**/ios/Runner/GoogleService-Info.plist
-
 # Release Build
 **/ios/Flutter/Dart-Defines.xcconfig
