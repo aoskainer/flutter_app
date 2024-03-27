@@ -82,14 +82,3 @@ flutter {
 dependencies {
     implementation 'com.google.android.gms:play-services-ads:23.0.0'
 }
-
-task selectGoogleServicesJson(type: Copy) {
-    from "src/${dartDefines.flavor}/google-services.json"
-    into './'
-}
-
-tasks.whenTaskAdded { task ->
-    if (task.name == 'processDebugGoogleServices' || task.name == 'processReleaseGoogleServices') {
-        task.dependsOn selectGoogleServicesJson
-    }
-}
